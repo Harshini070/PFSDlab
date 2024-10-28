@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ {% extends 'base.html' %}
+ {% block content %}
+<h1> Hello {{name}} </h1>
+<form action="add" method="post">
+    {% csrf_token %}
+ Enter First Number: <input type="text" name="num1"><br>
+ Enter Second Number: <input type="text" name="num2"><br>
+ <input type="submit">
+</form>
+<br><br>
+<td><a href="{% url 'register' %}"><button type="button" class="btn btn-success">Register</button></
+a></td>
+<a href="{% url 'logout' %}"><button type="button" class="btn btn-success">Logout</button></a>
+{% endblock %}
+</body>
+</html>
